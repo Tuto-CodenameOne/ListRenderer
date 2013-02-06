@@ -34,6 +34,9 @@ public abstract class StateMachineBase extends UIBuilder {
         initVars();
         UIBuilder.registerCustomComponent("Tabs", com.codename1.ui.Tabs.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
+        UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
+        UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
+        UIBuilder.registerCustomComponent("List", com.codename1.ui.List.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         if(loadTheme) {
             if(res == null) {
@@ -67,6 +70,9 @@ public abstract class StateMachineBase extends UIBuilder {
         initVars();
         UIBuilder.registerCustomComponent("Tabs", com.codename1.ui.Tabs.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
+        UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
+        UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
+        UIBuilder.registerCustomComponent("List", com.codename1.ui.List.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         if(loadTheme) {
             if(res == null) {
@@ -105,38 +111,26 @@ public abstract class StateMachineBase extends UIBuilder {
         this(res, null, loadTheme);
     }
 
-    public com.codename1.ui.Container findContainer3(Component root) {
-        return (com.codename1.ui.Container)findByName("Container3", root);
+    public com.codename1.ui.Label findLine2(Component root) {
+        return (com.codename1.ui.Label)findByName("Line2", root);
     }
 
-    public com.codename1.ui.Container findContainer3() {
-        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container3", Display.getInstance().getCurrent());
+    public com.codename1.ui.Label findLine2() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Line2", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Container)findByName("Container3", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Label)findByName("Line2", aboutToShowThisContainer);
         }
         return cmp;
     }
 
-    public com.codename1.ui.Form findMain(Component root) {
-        return (com.codename1.ui.Form)findByName("Main", root);
+    public com.codename1.ui.Label findLine1(Component root) {
+        return (com.codename1.ui.Label)findByName("Line1", root);
     }
 
-    public com.codename1.ui.Form findMain() {
-        com.codename1.ui.Form cmp = (com.codename1.ui.Form)findByName("Main", Display.getInstance().getCurrent());
+    public com.codename1.ui.Label findLine1() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Line1", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Form)findByName("Main", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Container findContainer2(Component root) {
-        return (com.codename1.ui.Container)findByName("Container2", root);
-    }
-
-    public com.codename1.ui.Container findContainer2() {
-        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container2", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Container)findByName("Container2", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Label)findByName("Line1", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -165,6 +159,102 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
+    public com.codename1.ui.Container findHddRenderer(Component root) {
+        return (com.codename1.ui.Container)findByName("HddRenderer", root);
+    }
+
+    public com.codename1.ui.Container findHddRenderer() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("HddRenderer", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("HddRenderer", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.List findList1(Component root) {
+        return (com.codename1.ui.List)findByName("List1", root);
+    }
+
+    public com.codename1.ui.List findList1() {
+        com.codename1.ui.List cmp = (com.codename1.ui.List)findByName("List1", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.List)findByName("List1", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Form findMain(Component root) {
+        return (com.codename1.ui.Form)findByName("Main", root);
+    }
+
+    public com.codename1.ui.Form findMain() {
+        com.codename1.ui.Form cmp = (com.codename1.ui.Form)findByName("Main", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Form)findByName("Main", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findLabel1(Component root) {
+        return (com.codename1.ui.Label)findByName("Label1", root);
+    }
+
+    public com.codename1.ui.Label findLabel1() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Label1", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("Label1", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.CheckBox findChecked(Component root) {
+        return (com.codename1.ui.CheckBox)findByName("Checked", root);
+    }
+
+    public com.codename1.ui.CheckBox findChecked() {
+        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("Checked", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.CheckBox)findByName("Checked", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findLabel(Component root) {
+        return (com.codename1.ui.Label)findByName("Label", root);
+    }
+
+    public com.codename1.ui.Label findLabel() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Label", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("Label", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.List findList(Component root) {
+        return (com.codename1.ui.List)findByName("List", root);
+    }
+
+    public com.codename1.ui.List findList() {
+        com.codename1.ui.List cmp = (com.codename1.ui.List)findByName("List", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.List)findByName("List", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findIcon(Component root) {
+        return (com.codename1.ui.Label)findByName("Icon", root);
+    }
+
+    public com.codename1.ui.Label findIcon() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Icon", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("Icon", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
     public com.codename1.ui.Container findContainer(Component root) {
         return (com.codename1.ui.Container)findByName("Container", root);
     }
@@ -184,10 +274,20 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+        if("HddRenderer".equals(f.getName())) {
+            exitHddRenderer(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
     }
 
 
     protected void exitMain(Form f) {
+    }
+
+
+    protected void exitHddRenderer(Form f) {
     }
 
     protected void beforeShow(Form f) {
@@ -198,10 +298,20 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+        if("HddRenderer".equals(f.getName())) {
+            beforeHddRenderer(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
     }
 
 
     protected void beforeMain(Form f) {
+    }
+
+
+    protected void beforeHddRenderer(Form f) {
     }
 
     protected void beforeShowContainer(Container c) {
@@ -212,15 +322,31 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+        if("HddRenderer".equals(c.getName())) {
+            beforeContainerHddRenderer(c);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
     }
 
 
     protected void beforeContainerMain(Container c) {
     }
 
+
+    protected void beforeContainerHddRenderer(Container c) {
+    }
+
     protected void postShow(Form f) {
         if("Main".equals(f.getName())) {
             postMain(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("HddRenderer".equals(f.getName())) {
+            postHddRenderer(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -231,9 +357,19 @@ public abstract class StateMachineBase extends UIBuilder {
     protected void postMain(Form f) {
     }
 
+
+    protected void postHddRenderer(Form f) {
+    }
+
     protected void postShowContainer(Container c) {
         if("Main".equals(c.getName())) {
             postContainerMain(c);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("HddRenderer".equals(c.getName())) {
+            postContainerHddRenderer(c);
             aboutToShowThisContainer = null;
             return;
         }
@@ -244,9 +380,19 @@ public abstract class StateMachineBase extends UIBuilder {
     protected void postContainerMain(Container c) {
     }
 
+
+    protected void postContainerHddRenderer(Container c) {
+    }
+
     protected void onCreateRoot(String rootName) {
         if("Main".equals(rootName)) {
             onCreateMain();
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("HddRenderer".equals(rootName)) {
+            onCreateHddRenderer();
             aboutToShowThisContainer = null;
             return;
         }
@@ -256,5 +402,70 @@ public abstract class StateMachineBase extends UIBuilder {
 
     protected void onCreateMain() {
     }
+
+
+    protected void onCreateHddRenderer() {
+    }
+
+    protected boolean setListModel(List cmp) {
+        String listName = cmp.getName();
+        if("List1".equals(listName)) {
+            return initListModelList1(cmp);
+        }
+        if("List".equals(listName)) {
+            return initListModelList(cmp);
+        }
+        return super.setListModel(cmp);
+    }
+
+    protected boolean initListModelList1(List cmp) {
+        return false;
+    }
+
+    protected boolean initListModelList(List cmp) {
+        return false;
+    }
+
+    protected void handleComponentAction(Component c, ActionEvent event) {
+        Container rootContainerAncestor = getRootAncestor(c);
+        if(rootContainerAncestor == null) return;
+        String rootContainerName = rootContainerAncestor.getName();
+        if(c.getParent().getLeadParent() != null) {
+            c = c.getParent().getLeadParent();
+        }
+        if(rootContainerName == null) return;
+        if(rootContainerName.equals("Main")) {
+            if("Checked".equals(c.getName())) {
+                onMain_CheckedAction(c, event);
+                return;
+            }
+            if("List".equals(c.getName())) {
+                onMain_ListAction(c, event);
+                return;
+            }
+            if("List1".equals(c.getName())) {
+                onMain_List1Action(c, event);
+                return;
+            }
+        }
+        if(rootContainerName.equals("HddRenderer")) {
+            if("Checked".equals(c.getName())) {
+                onHddRenderer_CheckedAction(c, event);
+                return;
+            }
+        }
+    }
+
+      protected void onMain_CheckedAction(Component c, ActionEvent event) {
+      }
+
+      protected void onMain_ListAction(Component c, ActionEvent event) {
+      }
+
+      protected void onMain_List1Action(Component c, ActionEvent event) {
+      }
+
+      protected void onHddRenderer_CheckedAction(Component c, ActionEvent event) {
+      }
 
 }
