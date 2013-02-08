@@ -7,6 +7,7 @@ import com.codename1.ui.Label;
 import com.codename1.ui.List;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.list.ListCellRenderer;
+import tuto.codenameone.ListRenderer.vo.HddVo;
 
 /**
  *
@@ -46,7 +47,12 @@ public class ProgrammaticHddRenderer extends Container implements ListCellRender
     }
     
     public Component getListCellRendererComponent(List list, Object value, int index, boolean isSelected) {
-        return null;
+        HddVo hddVo = (HddVo)value;
+        checkBox.setSelected(hddVo.checked);
+        image.setIcon(hddVo.image);
+        ligne1.setText(hddVo.ligne1);
+        ligne2.setText(hddVo.ligne2);
+        return this;
     }
 
     public Component getListFocusComponent(List list) {

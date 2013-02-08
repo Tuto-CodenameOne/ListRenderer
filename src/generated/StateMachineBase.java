@@ -159,6 +159,18 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
+    public com.codename1.ui.List findProgrammaticList(Component root) {
+        return (com.codename1.ui.List)findByName("programmaticList", root);
+    }
+
+    public com.codename1.ui.List findProgrammaticList() {
+        com.codename1.ui.List cmp = (com.codename1.ui.List)findByName("programmaticList", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.List)findByName("programmaticList", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
     public com.codename1.ui.Container findHddRenderer(Component root) {
         return (com.codename1.ui.Container)findByName("HddRenderer", root);
     }
@@ -167,18 +179,6 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("HddRenderer", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Container)findByName("HddRenderer", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.List findList1(Component root) {
-        return (com.codename1.ui.List)findByName("List1", root);
-    }
-
-    public com.codename1.ui.List findList1() {
-        com.codename1.ui.List cmp = (com.codename1.ui.List)findByName("List1", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.List)findByName("List1", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -409,8 +409,8 @@ public abstract class StateMachineBase extends UIBuilder {
 
     protected boolean setListModel(List cmp) {
         String listName = cmp.getName();
-        if("List1".equals(listName)) {
-            return initListModelList1(cmp);
+        if("programmaticList".equals(listName)) {
+            return initListModelProgrammaticList(cmp);
         }
         if("List".equals(listName)) {
             return initListModelList(cmp);
@@ -418,7 +418,7 @@ public abstract class StateMachineBase extends UIBuilder {
         return super.setListModel(cmp);
     }
 
-    protected boolean initListModelList1(List cmp) {
+    protected boolean initListModelProgrammaticList(List cmp) {
         return false;
     }
 
@@ -443,8 +443,8 @@ public abstract class StateMachineBase extends UIBuilder {
                 onMain_ListAction(c, event);
                 return;
             }
-            if("List1".equals(c.getName())) {
-                onMain_List1Action(c, event);
+            if("programmaticList".equals(c.getName())) {
+                onMain_ProgrammaticListAction(c, event);
                 return;
             }
         }
@@ -462,7 +462,7 @@ public abstract class StateMachineBase extends UIBuilder {
       protected void onMain_ListAction(Component c, ActionEvent event) {
       }
 
-      protected void onMain_List1Action(Component c, ActionEvent event) {
+      protected void onMain_ProgrammaticListAction(Component c, ActionEvent event) {
       }
 
       protected void onHddRenderer_CheckedAction(Component c, ActionEvent event) {
