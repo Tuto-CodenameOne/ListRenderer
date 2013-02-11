@@ -22,21 +22,26 @@ import tuto.codenameone.ListRenderer.vo.HddVo;
 public class HddListController extends StateMachineBase {
     
     /**
-     * Initialise la liste avec un jeu de données
+     * Initialisation de la liste
      * 
      * @param f : Main Form
+     * @param resources : Application resources
      */
     public void initializeHddList(Form f, Resources resources) {
         List list = findProgrammaticList(f);
         if (list != null) {
+            
+            // Indique le renderer à utiliser
             list.setRenderer(new ProgrammaticHddRenderer());
             
+            // Création du jeu de données
             Vector<HddVo> items = new Vector<HddVo>(2);
             HddVo hdd1 = new HddVo(false, resources.getImage("hdd.png"), "Local Disk (C:)", "95.2 GB free of 185 GB");
             HddVo hdd2 = new HddVo(false, resources.getImage("hdd.png"), "Local Disk (D:)", "1.11 GB free of 112 GB");
             items.add(hdd1);
             items.add(hdd2);
             
+            // Utilisation d'un Model générique associé à notre jeu de données
             list.setModel(new DefaultListModel(items));
         }
     }
@@ -48,8 +53,11 @@ public class HddListController extends StateMachineBase {
      * @param event : Event Click
      */
     public void updateListItems(Component c, ActionEvent event) {
+        // On cast pour accéder aux fonctions du composant List
         List list = (List) c;
+        // On récupère la ligne cliquée
         HddVo hddVo = (HddVo) list.getModel().getItemAt(list.getSelectedIndex());
+        // On modifie la valeur en conséquence
         hddVo.checked = !hddVo.checked;
     }
     

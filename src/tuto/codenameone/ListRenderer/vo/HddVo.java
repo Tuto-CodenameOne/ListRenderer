@@ -1,13 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tuto.codenameone.ListRenderer.vo;
 
 import com.codename1.ui.Image;
 
 /**
- *
+ * Value Object
  * @author bcirot
  */
 public class HddVo {

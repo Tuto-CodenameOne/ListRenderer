@@ -47,11 +47,16 @@ public class ProgrammaticHddRenderer extends Container implements ListCellRender
     }
     
     public Component getListCellRendererComponent(List list, Object value, int index, boolean isSelected) {
+        // On cast l'objet à afficher
         HddVo hddVo = (HddVo)value;
+        
+        // On insère les valeurs dans les composants
         checkBox.setSelected(hddVo.checked);
         image.setIcon(hddVo.image);
         ligne1.setText(hddVo.ligne1);
         ligne2.setText(hddVo.ligne2);
+        
+        // On retourne le renderer
         return this;
     }
 

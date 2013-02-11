@@ -37,11 +37,13 @@ public class StateMachine extends StateMachineBase {
 
     @Override
     protected void beforeMain(Form f) {
+        // On délègue l'initialisation de la list au controller de la List
         listController.initializeHddList(f, resources);
     }
 
     @Override
     protected void onMain_ProgrammaticListAction(Component c, ActionEvent event) {
+        // On délègue la synchronisation des données au controller de la List
         listController.updateListItems(c, event);
     }
 }
