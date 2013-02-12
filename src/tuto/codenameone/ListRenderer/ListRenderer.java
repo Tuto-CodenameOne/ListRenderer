@@ -3,7 +3,6 @@ package tuto.codenameone.ListRenderer;
 
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
-import tuto.codenameone.ListRenderer.controller.HddListController;
 import userclasses.StateMachine;
 
 public class ListRenderer {
